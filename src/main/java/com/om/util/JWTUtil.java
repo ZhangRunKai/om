@@ -33,7 +33,7 @@ public class JWTUtil{
                 .withClaim(USERNAME, user.getUserName())
                 .withClaim(USERID, user.getUserId().toString())
                 .withClaim(ROLEPOWER,user.getRolePower().toString())
-                .withClaim(ROLENAME,user.getRoleDescribe())
+                .withClaim(ROLENAME,user.getRoleName())
                 .withExpiresAt(new Date(System.currentTimeMillis()+ EXPIRES))
                 .sign(ALGORITHM);
     }

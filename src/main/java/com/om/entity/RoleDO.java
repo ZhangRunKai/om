@@ -20,6 +20,11 @@ public class RoleDO {
     private Integer roleId;
 
     /**
+     * 角色名称
+     */
+    private Integer roleName;
+
+    /**
      * 角色权限
      */
     private Integer rolePower;

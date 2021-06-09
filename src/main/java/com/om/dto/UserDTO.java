@@ -41,6 +41,12 @@ public class UserDTO {
 
     private Integer roleId;
 
+
+    /**
+     * 角色名称
+     */
+    private Integer roleName;
+
     /**
      * 角色权限
      */
@@ -66,6 +72,14 @@ public class UserDTO {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public Integer getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(Integer roleName) {
+        this.roleName = roleName;
     }
 
     public String getUserName() {
