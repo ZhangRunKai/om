@@ -52,6 +52,7 @@ public class JWTUtil{
     public static Integer getUserId(){
         return Integer.parseInt(JWTUtil.userManager.get().get(JWTUtil.USERID));
     }
+
     public static Integer getPower(){
         return Integer.parseInt(JWTUtil.userManager.get().get(JWTUtil.ROLEPOWER));
     }

@@ -15,12 +15,12 @@ public class RequestIntercept implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-        String token = request.getHeader(com.zrk.util.JWTUtil.TOKEN_HEADER);
+        String token = request.getHeader(JWTUtil.TOKEN_HEADER);
         if(token==null){
             return false;
         }
-        HashMap<String, String> hashMap = com.zrk.util.JWTUtil.VerifierToken(token);
-        com.zrk.util.JWTUtil.userManager.set(hashMap);
+        HashMap<String, String> hashMap = JWTUtil.VerifierToken(token);
+        JWTUtil.userManager.set(hashMap);
         return true;
     }
 
@@ -31,7 +31,7 @@ public class RequestIntercept implements HandlerInterceptor {
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        com.zrk.util.JWTUtil.userManager.remove();
+        JWTUtil.userManager.remove();
     }
 }
 

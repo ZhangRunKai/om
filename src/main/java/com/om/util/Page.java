@@ -24,11 +24,11 @@ public class Page {
      */
     private Integer total;
 
-//    /**
-//     * 用于mysql分页中
-//     * Limit offset , pageSize,
-//     */
-//    private Integer offset;
+    /**
+     * 用于mysql分页中
+     * Limit offset , pageSize,
+     */
+    private Integer offset;
 
     public Integer getPageSize() {
         return pageSize;
@@ -36,6 +36,7 @@ public class Page {
 
     public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize > 0 ? 10 : pageSize;
+        this.offset = getOffset();
     }
 
     public Integer getPageNo() {
@@ -44,6 +45,7 @@ public class Page {
 
     public void setPageNo(Integer pageNo) {
         this.pageNo = pageNo > 0 ? 1 : pageNo;
+        this.offset = getOffset();
     }
 
     public Integer getTotal() {
@@ -61,5 +63,4 @@ public class Page {
     public Integer getOffset() {
         return (pageNo - 1) * pageSize;
     }
-
 }
